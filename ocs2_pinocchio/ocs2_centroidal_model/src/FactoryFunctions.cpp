@@ -113,7 +113,7 @@ CentroidalModelInfo createCentroidalModelInfo(const PinocchioInterface& interfac
 
   // make sure the nominal base frame is aligned with the world frame
   info.qPinocchioNominal.resize(model.nq);
-  info.qPinocchioNominal << vector_t::Zero(6), nominalJointAngles;
+  info.qPinocchioNominal << 0.0, 0.0, 0.3, 0.0, 0.0, 0.0, nominalJointAngles;
   info.centroidalInertiaNominal.setZero();
   info.comToBasePositionNominal.setZero();
   if (info.centroidalModelType == CentroidalModelType::SingleRigidBodyDynamics) {
